@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantapp/constraints.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:plantapp/screens/details/components/icon_card.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
@@ -26,7 +28,20 @@ class DetailsScreen extends StatelessWidget {
                           icon: SvgPicture.asset('assets/icons/back_arrow.svg'),
                             
                         )
-                      )
+                      ),
+                      Spacer(),
+                      IconCard(
+                        icon: 'assets/icons/sun.svg',
+                      ),
+                      IconCard(
+                        icon: 'assets/icons/icon_2.svg',
+                      ),
+                      IconCard(
+                        icon: 'assets/icons/icon_3.svg',
+                      ),
+                      IconCard(
+                        icon: 'assets/icons/icon_4.svg',
+                      ),
                     ]
                   ),
                 ),
@@ -62,3 +77,4 @@ class DetailsScreen extends StatelessWidget {
     
   }
 }
+
