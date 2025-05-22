@@ -18,14 +18,24 @@ class RecomendsPlants extends StatelessWidget {
             title: "Samantah",
             country: "Russia",
             price: 440,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailsScreen()),
+              );
+            },
           ),
           RecomandPlantCard(
             image: "assets/images/image_2.png",
             title: "Samantah",
             country: "Russia",
             price: 440,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailsScreen()),
+              );
+            },
           ),
           RecomandPlantCard(
             image: "assets/images/image_3.png",
