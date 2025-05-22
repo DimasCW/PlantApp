@@ -28,7 +28,13 @@ class HeaderWithSearchBox extends StatelessWidget {
       ),
       child: Row(
         children: <Widget>[
-          Text("Hi User", style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),),
+          Text(
+            "Hi User", 
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+              color: Colors.white, 
+              fontWeight: FontWeight.bold
+            ),
+          ),
           Spacer(),
           Image.asset("assets/images/img.png"),
         ],

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:plantapp/constraints.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:plantapp/screens/home/components/header_with_searchbox.dart';
+import 'package:plantapp/screens/home/components/title_with_more_btn.dart';
+import 'package:plantapp/screens/home/components/recomend_plants.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -18,11 +20,6 @@ class Body extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 HeaderWithSearchBox(size: size),
-                TitleWithMoreBtn(
-                  title: "Recommended",
-                  press: () {},
-                ),
-                RecomendsPlants(),
                 Positioned(
                   bottom: 0,
                   left: 0,
@@ -65,7 +62,11 @@ class Body extends StatelessWidget {
               ],
             ),
           ),
-          // You can continue adding more widgets here
+          TitleWithMoreBtn(
+            title: "Recommended",
+            press: () {},
+          ),
+          const RecomendsPlants(),
         ],
       ),
     );
