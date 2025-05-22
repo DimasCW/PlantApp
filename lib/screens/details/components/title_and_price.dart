@@ -4,11 +4,11 @@ import 'package:plantapp/constraints.dart';
 
 class TitleAndPrice extends StatelessWidget {
   const TitleAndPrice({
-    Key key,
-    this.title,
-    this.country,
-    this.price,
-  }) : super(key: key);
+    super.key,
+    required this.title,
+    required this.country,
+    required this.price,
+  });
 
   final String title, country;
   final int price;
@@ -26,7 +26,7 @@ class TitleAndPrice extends StatelessWidget {
                   text: "$title\n",
                   style: Theme.of(context)
                       .textTheme
-                      .headline4
+                      .headlineMedium
                       .copyWith(color: kTextColor, fontWeight: FontWeight.bold),
                 ),
                 TextSpan(
@@ -40,12 +40,12 @@ class TitleAndPrice extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Text(
             "\$$price",
             style: Theme.of(context)
                 .textTheme
-                .headline5
+                .headlineSmall
                 .copyWith(color: kPrimaryColor),
           )
         ],

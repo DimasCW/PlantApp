@@ -6,9 +6,9 @@ import 'icon_card.dart';
 
 class ImageAndIcons extends StatelessWidget {
   const ImageAndIcons({
-    Key key,
-    @required this.size,
-  }) : super(key: key);
+    super.key,
+    required this.size,
+  });
 
   final Size size;
 
@@ -30,14 +30,14 @@ class ImageAndIcons extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child: IconButton(
                         padding:
-                            EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                            const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                         icon: SvgPicture.asset("assets/icons/back_arrow.svg"),
                         onPressed: () {
                           Navigator.pop(context);
                         },
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     IconCard(icon: "assets/icons/sun.svg"),
                     IconCard(icon: "assets/icons/icon_2.svg"),
                     IconCard(icon: "assets/icons/icon_3.svg"),
@@ -50,18 +50,18 @@ class ImageAndIcons extends StatelessWidget {
               height: size.height * 0.8,
               width: size.width * 0.75,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(63),
                   bottomLeft: Radius.circular(63),
                 ),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0, 10),
+                    offset: const Offset(0, 10),
                     blurRadius: 60,
                     color: kPrimaryColor.withOpacity(0.29),
                   ),
                 ],
-                image: DecorationImage(
+                image: const DecorationImage(
                   alignment: Alignment.centerLeft,
                   fit: BoxFit.cover,
                   image: AssetImage("assets/images/img.png"),

@@ -10,7 +10,7 @@ class MyBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
+      padding: const EdgeInsets.only(
         left: kDefaultPadding * 2,
         right: kDefaultPadding * 2,
         bottom: kDefaultPadding,
@@ -20,7 +20,7 @@ class MyBottomNavBar extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            offset: Offset(0, 15),
+            offset: const Offset(0, 15),
             blurRadius: 15,
             color: kPrimaryColor.withOpacity(0.38),
           )
@@ -31,15 +31,15 @@ class MyBottomNavBar extends StatelessWidget {
         children: <Widget>[
           IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset('assets/icons/flower.png'),
+            icon: SvgPicture.asset('assets/icons/flower.svg'),
           ),
           IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset('assets/icons/heart-icon.png'),
+            icon: SvgPicture.asset('assets/icons/heart-icon.svg'),
           ),
           IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset('assets/icons/user-icon.png'),
+            icon: SvgPicture.asset('assets/icons/user-icon.svg'),
           ),
         ],
       )
