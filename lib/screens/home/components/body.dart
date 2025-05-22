@@ -18,7 +18,10 @@ class Body extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 HeaderWithSearchBox(size: size),
-                TitleWithMoreBtn(),
+                TitleWithMoreBtn(
+                  title: "Recommended",
+                  press: () {},
+                ),
                 Positioned(
                   bottom: 0,
                   left: 0,
@@ -71,7 +74,12 @@ class Body extends StatelessWidget {
 class TitleWithMoreBtn extends StatelessWidget {
   const TitleWithMoreBtn({
     super.key,
+    this.title,
+    this.press,
   });
+
+  final String title;
+  final Function press;
 
   @override
   Widget build(BuildContext context) {
@@ -79,14 +87,14 @@ class TitleWithMoreBtn extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: Row(
         children: [
-          TitleWithCustomUnderline(text: "Recommended"),
+          TitleWithCustomUnderline(text: title),
           Spacer(),
           FlatButton(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
             color: kPrimaryColor,
-            onPressed: () {},
+            onPressed: press,
             child: Text("More", style: TextStyle(color: Colors.white),),
           ),
         ],
