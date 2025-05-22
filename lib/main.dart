@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plantapp/constraints.dart';
-import 'package:plantapp/screens/home/components/home_screen.dart';
+import 'package:plantapp/screens/home/home_screen.dart';
 void main() {
   runApp(const MyApp());
 }

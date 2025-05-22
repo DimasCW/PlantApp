@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plantapp/constraints.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:plantapp/screens/home/components/header_with_searchbox.dart';
 
 class Body extends StatelessWidget {
   const Body({super.key});
@@ -17,6 +18,7 @@ class Body extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 HeaderWithSearchBox(size: size),
+                TitleWithCustomUnderline(text: "Recommended"),
                 Positioned(
                   bottom: 0,
                   left: 0,
@@ -66,38 +68,39 @@ class Body extends StatelessWidget {
   }
 }
 
-class HeaderWithSearchBox extends StatelessWidget {
-  const HeaderWithSearchBox({
+class TitleWithCustomUnderline extends StatelessWidget {
+  const TitleWithCustomUnderline({
     super.key,
-    required this.size,
+    this.text,
   });
 
-  final Size size;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),
-      padding: EdgeInsets.only(
-        left: kDefaultPadding,
-        right: kDefaultPadding,
-        bottom: 36 + kDefaultPadding,
-      ),
-      height: size.height * 0.2 - 27,
-      decoration: BoxDecoration(
-        color: kPrimaryColor,
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(36),
-          bottomRight: Radius.circular(36),
-        ),
-      ),
-      child: Row(
+      height: 24,
+      child: Stack(
         children: <Widget>[
-          Text("Hi User", style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),),
-          Spacer(),
-          Image.asset("assets/images/img.png"),
+          Padding(padding: const EdgeInsets.only(left: kDefaultPadding/4),
+          child: Text(text,
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)
+          ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              margin: EdgeInsets.only(right: kDefaultPadding/4),
+              height: 7,
+              color: kPrimaryColor.withOpacity(0.2),
+            ),
+          ),
         ],
-      ),
+      )
     );
   }
 }
+
+
