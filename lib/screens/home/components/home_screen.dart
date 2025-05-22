@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
       elevation: 0,
       leading: IconButton(
         onPressed: () {},
-        icon: SvgPicture.asset('assets/icons/menu.svg'),
+        icon: SvgPicture.asset('assets/icons/menu.png'),
       ),
     );
   }
