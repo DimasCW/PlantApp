@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 HeaderWithSearchBox(size: size),
-                TitleWithCustomUnderline(text: "Recommended"),
+                TitleWithMoreBtn(),
                 Positioned(
                   bottom: 0,
                   left: 0,
@@ -62,6 +62,33 @@ class Body extends StatelessWidget {
             ),
           ),
           // You can continue adding more widgets here
+        ],
+      ),
+    );
+  }
+}
+
+class TitleWithMoreBtn extends StatelessWidget {
+  const TitleWithMoreBtn({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+      child: Row(
+        children: [
+          TitleWithCustomUnderline(text: "Recommended"),
+          Spacer(),
+          FlatButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            color: kPrimaryColor,
+            onPressed: () {},
+            child: Text("More", style: TextStyle(color: Colors.white),),
+          ),
         ],
       ),
     );
