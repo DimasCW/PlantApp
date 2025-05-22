@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:plantapp/screens/home/components/body.dart';
+import 'package:plantapp/constraints.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,6 +11,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(),
       body: Body(),
+      bottomNavigationBar: MyBottomNavBar()
     );
   }
 

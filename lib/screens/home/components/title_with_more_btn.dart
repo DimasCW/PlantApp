@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:plantapp/constraints.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 
 class TitleWithMoreBtn extends StatelessWidget {
   const TitleWithMoreBtn({
     super.key,
-    required this.title,
-    required this.press,
+    this.title,
+    this.press,
   });
 
   final String title;
-  final VoidCallback press;
+  final Function press;
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +21,11 @@ class TitleWithMoreBtn extends StatelessWidget {
         children: [
           TitleWithCustomUnderline(text: title),
           Spacer(),
-          TextButton(
-            style: TextButton.styleFrom(
-              backgroundColor: kPrimaryColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
+          FlatButton(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
             ),
+            color: kPrimaryColor,
             onPressed: press,
             child: Text("More", style: TextStyle(color: Colors.white),),
           ),
@@ -38,7 +38,7 @@ class TitleWithMoreBtn extends StatelessWidget {
 class TitleWithCustomUnderline extends StatelessWidget {
   const TitleWithCustomUnderline({
     super.key,
-    required this.text,
+    this.text,
   });
 
   final String text;
